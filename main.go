@@ -36,7 +36,6 @@ func get_balance() (string) {
 func last_price(t time.Time) {
     ticker, _ := bittrex_client.GetTicker(base_coin + "-" + market_coin)
     net_diff := fmt.Sprint(((ticker.Bid - last_sell) / last_sell) * 100)
-    //fmt.Println("[+] [ Last Bid:", ticker.Bid, "|| Last Ask:", ticker.Ask, "|| Last market sell:", ticker.Last, "] [ My last sell:", last_sell, "|| Net:", net_diff + "% ]", get_balance(), t.UnixNano())
     fmt.Printf("[+] Last Bid: %v || Last Ask: %v || Last market sell: %v [ My last sell: %v Net diff: %v ]%v\n", ticker.Bid, ticker.Ask, ticker.Last, last_sell, net_diff,get_balance())
 }
 
