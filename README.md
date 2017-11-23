@@ -22,5 +22,5 @@ go run trade-bot.go
 ```
 
 ```
-go build trade-bot && ./trade-bot
+go build trade-bot.go && ./trade-bot
 ```

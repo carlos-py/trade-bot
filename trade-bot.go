@@ -5,8 +5,8 @@ import "github.com/pelletier/go-toml"
 import "github.com/toorop/go-bittrex"
 import "time"
 
-// Load and parse config file - config.toml
-var config, err = toml.LoadFile("config.toml")
+// Load and parse config file - trade-bot.conf
+var config, err = toml.LoadFile("trade-bot.conf")
 
 var configTree = config.Get("config").(*toml.Tree)
 var base_coin = configTree.Get("base_coin").(string)
@@ -53,5 +53,5 @@ func main() {
     fmt.Println("[+] The target_sell is:", target_sell)
 
     // check price every 2 seconds
-    doEvery(3000*time.Millisecond, last_price)
+    doEvery(2000*time.Millisecond, last_price)
 }
