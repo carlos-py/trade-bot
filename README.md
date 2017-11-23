@@ -11,7 +11,7 @@ go get github.com/toorop/go-bittrex
 go install github.com/pelletier/go-toml
 go install github.com/toorop/go-bittrex
 ```
-## Condfiguration
+## Configuration
 
 See the config.toml file for configuration options
 
