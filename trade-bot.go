@@ -4,6 +4,8 @@ import "fmt"
 import "github.com/pelletier/go-toml"
 import "github.com/toorop/go-bittrex"
 import "time"
+import "github.com/shopspring/decimal"
+
 
 // Load and parse config file - trade-bot.conf
 var config, err = toml.LoadFile("trade-bot.conf")
@@ -35,8 +37,8 @@ func get_balance() (string) {
 
 func last_price(t time.Time) {
     ticker, _ := bittrex_client.GetTicker(base_coin + "-" + market_coin)
-    net_diff := fmt.Sprint(((ticker.Bid - last_sell) / last_sell) * 100)
-    fmt.Printf("[+] Last Bid: %v || Last Ask: %v || Last market sell: %v [ My last sell: %v Net diff: %v ]%v\n", ticker.Bid, ticker.Ask, ticker.Last, last_sell, net_diff,get_balance())
+    net_diff := fmt.Sprint(((ticker.Bid.Sub(decimal.NewFromFloat(last_sell))).Div(decimal.NewFromFloat(last_sell))).Mul(decimal.NewFromFloat(100)))
+    fmt.Printf("[+] Last Bid: %v | Last Ask: %v | Last market sell: %v ||| My last sell: %v Net diff: %v ||| %v\n", ticker.Bid, ticker.Ask, ticker.Last, last_sell, net_diff, get_balance())
 }
 
 func main() {

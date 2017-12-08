@@ -3,6 +3,8 @@ Crypto trading bot written in Go
 
 ## Dependencies
 
+Go version: 1.9
+
 Third-party packages: go-bittrex and go-toml
 ```
 go get github.com/pelletier/go-toml
@@ -13,13 +15,14 @@ go install github.com/toorop/go-bittrex
 ```
 ## Configuration
 
-See the config.toml file for configuration options
+See the trade-bot.conf file for configuration options
 
 ## Run or Build from source
 
 ```
 go run trade-bot.go
 ```
+or
 
 ```
 go build trade-bot.go && ./trade-bot
