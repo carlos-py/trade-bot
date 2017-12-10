@@ -1,6 +1,8 @@
 # trade-bot
 Crypto trading bot written in Go
 
+Work in progress - Doesn't do much currently
+
 ## Dependencies
 
 Go version: 1.9
