@@ -1,10 +1,12 @@
 package main
 
-import "fmt"
-import "github.com/pelletier/go-toml"
-import "github.com/toorop/go-bittrex"
-import "time"
-import "github.com/shopspring/decimal"
+import (
+	"fmt"
+	"github.com/pelletier/go-toml"
+	"github.com/shopspring/decimal"
+	"github.com/toorop/go-bittrex"
+	"time"
+)
 
 var config, err = toml.LoadFile("trade-bot.conf")
 var configTree = config.Get("config").(*toml.Tree)

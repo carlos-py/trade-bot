@@ -1,7 +1,7 @@
 # trade-bot
 Crypto trading bot written in Go
 
-Work in progress - Doesn't do much currently
+:squirrel: Work in progress! - Doesn't do much currently
 
 ## Dependencies
 
@@ -25,7 +25,6 @@ See the trade-bot.conf file for configuration options
 go run trade-bot.go
 ```
 or
-
 ```
 go build trade-bot.go && ./trade-bot
 ```
